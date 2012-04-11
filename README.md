@@ -1,6 +1,8 @@
+# 死
+
 ## description
 
-type 'jkjkjkjjkjk...' to avoid to quit forcely.
+type `jkjkjkjjkjk...` to avoid to quit forcely.
 
 ## require
 
