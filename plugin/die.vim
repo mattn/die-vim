@@ -11,13 +11,22 @@ function! s:sb()
   return s:bar
 endfunction
 
-function! s:power_down()
-  call s:sb().incr(-1)
-  call feedkeys("f\e")
+function! s:shi()
   if s:sb().cur_value == 0
     bw!
     call s:bar.incr(100)
   endif
+endfunction
+
+function! s:power_down()
+  call s:sb().incr(-1)
+  call feedkeys("f\e")
+  call s:shi()
+endfunction
+
+function! s:power_down_i()
+  call s:sb().incr(-1)
+  call s:shi()
 endfunction
 
 function! s:power_up(key)
@@ -29,6 +38,7 @@ function! s:init()
   augroup foo
     au!
     au! CursorHold * call s:power_down()
+    au! CursorHoldI * call s:power_down_i()
   augroup END
   set updatetime=100
   nnoremap <expr> j <SID>power_up('j')
