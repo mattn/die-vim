@@ -18,13 +18,7 @@ function! s:shi()
   endif
 endfunction
 
-function! s:power_down()
-  call s:sb().incr(-1)
-  call feedkeys("f\e")
-  call s:shi()
-endfunction
-
-function! s:power_down_i()
+function! s:power_down(...)
   call s:sb().incr(-1)
   call s:shi()
 endfunction
@@ -35,12 +29,7 @@ function! s:power_up(key)
 endfunction
 
 function! s:init()
-  augroup foo
-    au!
-    au! CursorHold * call s:power_down()
-    au! CursorHoldI * call s:power_down_i()
-  augroup END
-  set updatetime=100
+  call timer_start(100, function('s:power_down'), {'repeat': -1})
   nnoremap <expr> j <SID>power_up('j')
   nnoremap <expr> k <SID>power_up('k')
 endfunction
