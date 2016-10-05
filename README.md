@@ -6,8 +6,8 @@ type `jkjkjkjjkjk...` to avoid to quit forcely.
 
 ## screenshot
 
-![](http://go-gyazo.appspot.com/79bd73cba18e8e70.png)
+![](https://raw.githubusercontent.com/mattn/die-vim/master/screenshot.gif)
 
-## require
+## bundled
 
 http://www.vim.org/scripts/script.php?script_id=2006
