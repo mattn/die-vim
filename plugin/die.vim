@@ -13,6 +13,9 @@ endfunction
 
 function! s:shi()
   if s:sb().cur_value == 0
+    if len(split(execute(":buffers"),"\n")) == 1
+      qall!
+    endif
     bw!
     call s:bar.incr(100)
   endif
